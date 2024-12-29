@@ -1,0 +1,218 @@
+p {
+    height: 200px;
+    width: 500px;
+    margin: 100px auto;
+    position: relative;
+  }
+  
+  img {
+    height: 200px;
+    position: absolute;
+    left: 0;
+    offset-path: path('m 0 50 q 50-30 100-30 t 100 30 100 0 100-30 100 30');
+    box-shadow: 1px 1px 3px #0008;
+    transition: transform .4s ease-out, offset-path .4s cubic-bezier(.77,-1.17,.75,.84),box-shadow .3s, z-index .3s;
+    z-index: 0;
+  }
+  
+  img:hover {
+    transform: scale(3);
+    /* on hover, the path gets a bit shorter & flattened & shifted to left/bottom a bit for nicer movement */
+    offset-path: path('m 5 65 q 45-0 90-0 t 90 0 90 0 90-0 90 0');
+    box-shadow: 3px 4px 10px #0006;
+    /* ensures that image gets on top of stack at the start of "popping" animation
+       and gets back at the end of getting back. With smaller value, 2 different transitions would be needed */
+    z-index: 999;
+  }
+  
+  /* 3 images */
+  img:nth-last-child(3):first-child {
+    offset-distance: 17%;
+  }
+  img:nth-last-child(2):nth-child(2) {
+    offset-distance: 49%;
+  }
+  img:last-child:nth-child(3) {
+    offset-distance: 81%;
+  }
+  
+  /* 4 images */
+  img:nth-last-child(4):first-child {
+    offset-distance: 10%;
+  }
+  img:nth-last-child(3):nth-child(2) {
+    offset-distance: 35%;
+  }
+  img:nth-last-child(2):nth-child(3) {
+    offset-distance: 65%;
+  }
+  img:last-child:nth-child(4) {
+    offset-distance: 90%;
+  }
+  
+  /* 5 images */
+  img:nth-last-child(5):first-child {
+    offset-distance: 0%;
+  }
+  img:nth-last-child(4):nth-child(2) {
+    offset-distance: 25%;
+  }
+  img:nth-last-child(3):nth-child(3) {
+    offset-distance: 51%;
+  }
+  img:nth-last-child(2):nth-child(4) {
+    offset-distance: 75%;
+  }
+  img:last-child:nth-child(5) {
+    offset-distance: 100%;
+  }
+.sample-images-header {
+  font-family: 'Arial', sans-serif;  /* Choose your preferred font */
+  font-size: 62px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  text-transform: uppercase;  /* Make the text block style (capital letters) */
+  letter-spacing: 5px;  /* Add space between the letters */
+  color: #333;  /* Dark color for contrast */
+  background-color: #fff;  /* White background */
+  padding: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);  /* Add a subtle shadow for better visibility */
+   /* Ensures the white background spans the full width of the screen */
+   width: 100%;
+   box-sizing: border-box;  /* Ensure padding is included in width calculation */
+   position: relative;
+}
+
+
+
+
+
+
+/* Style the <a> tag to remove default styling */
+a {
+  text-decoration: none; /* Removes the underline from the link */
+}
+/* Back to Home Button Styling */
+button.backtoHome {
+  background-color: #4CAF50;  /* Green background */
+  color: white;  /* White text color */
+  font-size: 16px;  /* Font size */
+  padding: 12px 24px;  /* Padding inside the button */
+  border: 2px solid #4CAF50; /* Green border to match the background */
+  border-radius: 8px;  /* Rounded corners */
+  cursor: pointer;  /* Pointer cursor on hover */
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s; /* Smooth transition */
+  width: fit-content;  /* Ensure button size adjusts to content */
+  margin: 20px auto;  /* Center the button horizontally */
+  text-decoration: none;  /* Remove underline from the link */
+  font-weight: bold;  /* Bold text */
+}
+
+/* Back to Home Button Hover Effect */
+button.backtoHome:hover {
+  background-color: #45a049;  /* Darker green on hover */
+  transform: translateY(-2px);  /* Lift the button slightly */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);  /* Subtle shadow on hover */
+}
+
+/* Back to Home Button Active Effect */
+button.backtoHome:active {
+  background-color: #3e8e41;  /* Even darker green when clicked */
+  transform: translateY(1px);  /* Pressed effect */
+  box-shadow: none;  /* No shadow when clicked */
+}
+
+/* Center the gallery title */
+.gallery-title {
+  text-align: center;  /* Center the text */
+  font-size: 3rem;      /* Make the title large */
+  font-weight: bold;    /* Make the title bold */
+  color: #ffffff;          /* Change the color if needed */
+  margin-top: 20px;     /* Add some spacing from the top */
+}
+
+/* Optional: Center images within the container */
+
+
+
+/* Ensure body content doesn't cause horizontal scrolling */
+body {
+  overflow-x: hidden; /* Disable horizontal scrolling */
+  margin: 0;          /* Remove default margin */
+  padding: 0;         /* Remove default padding */
+}
+
+/* For small screen sizes (mobile), adjust layout */
+@media only screen and (max-width: 768px) {
+  .gallery-title {
+      font-size: 2.5rem; /* Slightly smaller title for mobile */
+      margin-top: 10px;   /* Adjust margin on smaller screens */
+  }
+
+}
+
+/* Container Styling */
+.project-info {
+  background-color: #626d60;  /* Light background for contrast */
+  border-radius: 8px;  /* Rounded corners */
+  padding: 20px;  /* Padding inside the container */
+  margin-top: 30px;  /* Space from the top */
+  text-align: center;  /* Center the text */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
+}
+
+/* Paragraph Styling */
+.project-info p {
+  font-size: 1.2rem;  /* Font size */
+  color: #333;  /* Dark text color */
+  font-weight: bold;  /* Make text bold */
+  line-height: 1.6;  /* Improve readability */
+  margin: 0;  /* Remove default margin */
+  margin-bottom: 20px;  /* Space between text and button */
+}
+
+/* Button Styling */
+.folder-button {
+  background-color: #4CAF50;  /* Green background */
+  color: white;  /* White text color */
+  font-size: 16px;  /* Font size */
+  padding: 12px 24px;  /* Padding inside the button */
+  border: none;  /* Remove border */
+  border-radius: 8px;  /* Rounded corners */
+  cursor: pointer;  /* Pointer cursor on hover */
+  display: flex;  /* Flexbox to center both icon and text */
+  flex-direction: column;  /* Stack the text and icon vertically */
+  align-items: center;  /* Center content horizontally */
+  justify-content: center;  /* Center content vertically */
+  text-align: center;  /* Ensure text is centered inside the button */
+  transition: background-color 0.3s, transform 0.2s;  /* Smooth transitions */
+  width: fit-content;  /* Ensure button size adjusts to content */
+  margin: 0 auto;  /* Center the button horizontally */
+  text-decoration: none;  /* Remove underline from the link */
+}
+
+/* Button Hover Effect */
+.folder-button:hover {
+  background-color: #45a049;  /* Darker green on hover */
+  transform: translateY(-2px);  /* Lift the button slightly */
+}
+
+/* Button Active Effect */
+.folder-button:active {
+  background-color: #3e8e41;  /* Even darker green when clicked */
+  transform: translateY(1px);  /* Pressed effect */
+}
+
+/* Font Awesome Icon Styling */
+.folder-button i {
+  margin-top: 8px;  /* Space between the text and the icon */
+  font-size: 18px;  /* Make the icon slightly larger */
+  display: block;  /* Make sure the icon is treated as a block element */
+}
+
+/* Optional: Ensure button is aligned and spaced properly */
+.project-info a {
+  text-decoration: none;  /* Remove underline from the link */
+}
